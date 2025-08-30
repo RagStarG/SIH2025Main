@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicSense - Civic Issue Reporting</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+  <!-- 🔹 LOGIN PAGE -->
+  <section id="loginSection">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginError" class="error">❌ Invalid Credentials!</p>
+      <p>Don’t have an account? <a href="#" id="goSignup">Sign Up</a></p>
+      <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+    </div>
+  </section>
+
+  <!-- 🔹 SIGNUP PAGE -->
+  <section id="signupSection" style="display:none;">
+    <div class="login-box">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" id="newUsername" placeholder="Choose Username" required>
+        <input type="password" id="newPassword" placeholder="Choose Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p id="signupError" class="error">⚠️ Username already exists!</p>
+      <p>Already have an account? <a href="#" id="goLogin">Login</a></p>
+    </div>
+  </section>
+
+  <!-- 🔹 FORGOT PASSWORD PAGE -->
+  <section id="forgotPasswordSection" style="display:none;">
+    <div class="login-box">
+      <h2>Forgot Password</h2>
+      <form id="forgotForm">
+        <input type="text" id="forgotUsername" placeholder="Enter your Username" required>
+        <button type="submit">Recover Password</button>
+      </form>
+      <p id="forgotResult"></p>
+      <p><a href="#" id="backToLogin">Back to Login</a></p>
+    </div>
+  </section>
+
+  <!-- 🔹 MAIN PORTAL -->
+  <section id="mainPage" style="display:none;">
+    <!-- Header -->
+    <header>
+      <div class="logo">🇮🇳 CivicSense</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#report">Report Issue</a></li>
+          <li><a href="#track">Track Status</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="logoutBtn">Logout</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <h1>Empowering Citizens. Smarter India.</h1>
+      <p>Report issues in your city, track resolutions, and help build a better nation.</p>
+      <button class="btn-primary" onclick="scrollToReport()">Report an Issue Now</button>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="feature-card">📍 Location-based Reporting</div>
+      <div class="feature-card">🤝 Crowdsourced Verification</div>
+      <div class="feature-card">🗂️ Smart Authority Routing</div>
+      <div class="feature-card">🔔 Real-time Notifications</div>
+    </section>
+
+    <!-- Report Issue -->
+    <section id="report" class="report">
+      <h2>Report an Issue</h2>
+      <form id="reportForm">
+        <label>Upload Photo/Video</label>
+        <input type="file" accept="image/*,video/*">
+
+        <label>Category</label>
+        <select>
+          <option>Garbage</option>
+          <option>Pothole</option>
+          <option>Electricity</option>
+          <option>Water</option>
+          <option>Traffic</option>
+          <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea placeholder="Describe the issue..."></textarea>
+
+        <label>Location</label>
+        <input type="text" placeholder="Auto-detected or enter manually">
+
+        <button type="submit" class="btn-primary">Submit Report</button>
+      </form>
+
+      <!-- Map Integration -->
+      <div id="map"></div>
+    </section>
+
+    <!-- Track Status -->
+    <section id="track" class="track">
+      <h2>Track Issue Status</h2>
+      <input type="text" id="issueId" placeholder="Enter Issue ID">
+      <button class="btn-primary" onclick="trackIssue()">Track</button>
+      <div id="statusResult"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>This system empowers citizens to report civic issues and helps authorities resolve them efficiently. Transparency, accountability, and collaboration make India smarter.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Message..."></textarea>
+        <button class="btn-primary">Send</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 CivicSense | Proudly Representing India 🇮🇳</p>
+    </footer>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
