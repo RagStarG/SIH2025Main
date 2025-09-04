@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🇮🇳 Admin</h2>
+      <ul>
+        <li><a href="#" onclick="viewReports()">📊 Reports</a></li>
+        <li><a href="#" onclick="goToSignup()">➕ Add Admin</a></li>
+        <li><a href="#" onclick="manageAdmins()">👥 Manage Admins</a></li>
+        <li><a href="#" onclick="openSettings()">⚙️ Settings</a></li>
+        <li><a href="#">📂 Documents</a></li>
+        <li><a href="#">🔔 Notifications</a></li>
+        <li><a href="#">📅 Calendar</a></li>
+        <li><a href="#">📜 Activity Logs</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <h1>Admin Dashboard</h1>
+        <button onclick="logoutAdmin()" class="logout-btn">🚪 Logout</button>
+      </header>
+
+      <!-- Stats -->
+      <section class="stats">
+        <div class="stat-card">👥 Users <span id="userCount"></span></div>
+        <div class="stat-card">📊 Reports <span id="reportCount"></span></div>
+        <div class="stat-card">🛡️ Admins <span id="adminCount"></span></div>
+        <div class="stat-card">⏳ Pending <span id="pendingCount"></span></div>
+      </section>
+
+      <!-- Feature Widgets -->
+      <section class="widgets">
+        <div class="widget">
+          <h3>📊 Reports</h3>
+          <p>Check and verify submitted reports.</p>
+          <button onclick="viewReports()">Open</button>
+        </div>
+
+        <div class="widget">
+          <h3>➕ Add Admin</h3>
+          <p>Register new administrators easily.</p>
+          <button onclick="goToSignup()">Add</button>
+        </div>
+
+        <div class="widget">
+          <h3>👥 Manage Admins</h3>
+          <p>View or remove existing admin accounts.</p>
+          <button onclick="manageAdmins()">Manage</button>
+        </div>
+
+        <div class="widget">
+          <h3>⚙️ Settings</h3>
+          <p>Configure dashboard preferences.</p>
+          <button onclick="openSettings()">Configure</button>
+        </div>
+
+        <div class="widget">
+          <h3>📂 Documents</h3>
+          <p>Upload or download important files.</p>
+          <button>Manage Docs</button>
+        </div>
+
+        <div class="widget">
+          <h3>🔔 Notifications</h3>
+          <p>View the latest alerts & system updates.</p>
+          <button>Check Alerts</button>
+        </div>
+<!-- 
+        <div class="widget">
+          <h3>📅 Calendar</h3>
+          <p>See upcoming events & reminders.</p>
+          <button>Open Calendar</button>
+        </div> -->
+
+        <div class="widget">
+          <h3>📜 Activity Logs</h3>
+          <p>Track recent admin activities.</p>
+          <button>View Logs</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin-script.js"></script>
+</body>
+</html>

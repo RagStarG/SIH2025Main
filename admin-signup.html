@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Sign Up</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <section>
+    <div class="signup-box">
+      <h2>Admin Sign Up</h2>
+      <form id="adminSignupForm">
+
+        <!-- First + Last Name -->
+        <div class="input-grid">
+          <input type="text" id="adminFirstName" placeholder="First Name" required>
+          <input type="text" id="adminLastName" placeholder="Last Name" required>
+        </div>
+
+        <!-- Phone vs Email toggle -->
+        <div class="contact-toggle">
+          <input type="radio" id="adminPhone" name="adminContactOption" value="phone" checked>
+          <label for="adminPhone">📱 Phone</label>
+
+          <input type="radio" id="adminEmail" name="adminContactOption" value="email">
+          <label for="adminEmail">📧 Email</label>
+        </div>
+
+        <input type="tel" id="adminPhoneNumber" placeholder="Phone Number">
+        <input type="email" id="adminEmailId" placeholder="Email Address" style="display:none;">
+
+        <!-- Passwords -->
+        <div class="input-grid">
+          <input type="password" id="newAdminPassword" placeholder="New Password" required>
+          <input type="password" id="confirmAdminPassword" placeholder="Confirm Password" required>
+        </div>
+
+        <button type="submit">Sign Up</button>
+        <button type="button" onclick="goHome()" class="home-btn">🏠 Back to Home</button>
+      </form>
+
+      <p id="adminSignupError" class="error" style="display:none;">⚠️ Admin already exists!</p>
+      <p id="adminPasswordError" class="error" style="display:none;">⚠️ Passwords do not match!</p>
+      <p>Already have an account? <a href="admin-login.html">Login</a></p>
+    </div>
+  </section>
+  <script src="admin-script.js"></script>
+</body>
+</html>

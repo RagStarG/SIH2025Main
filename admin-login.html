@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <section>
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+
+        <!-- First + Last Name -->
+        <div class="input-grid">
+          <input type="text" id="adminLoginFirstName" placeholder="First Name" required>
+          <input type="text" id="adminLoginLastName" placeholder="Last Name" required>
+        </div>
+
+        <!-- Phone vs Email toggle -->
+        <div class="contact-toggle">
+          <input type="radio" id="adminLoginPhone" name="adminLoginContactOption" value="phone" checked>
+          <label for="adminLoginPhone">📱 Phone</label>
+
+          <input type="radio" id="adminLoginEmail" name="adminLoginContactOption" value="email">
+          <label for="adminLoginEmail">📧 Email</label>
+        </div>
+
+        <input type="tel" id="adminLoginPhoneNumber" placeholder="Phone Number">
+        <input type="email" id="adminLoginEmailId" placeholder="Email Address" style="display:none;">
+
+        <input type="password" id="adminPassword" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+        <button type="button" onclick="goHome()" class="home-btn">🏠 Back to Home</button>
+      </form>
+
+      <p id="adminLoginError" class="error" style="display:none;">❌ Invalid Admin Credentials!</p>
+      <p>Don’t have an account? <a href="admin-signup.html">Admin Sign Up</a></p>
+    </div>
+  </section>
+  <script src="admin-script.js"></script>
+</body>
+</html>
